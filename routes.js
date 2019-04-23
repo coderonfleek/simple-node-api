@@ -1,7 +1,10 @@
-let todos = require("./todos");
+const express = require('express');
+const todos = require("./todos");
 
-module.exports = function(app) {
-  app.get("/todos", function(req, res) {
-    res.json(todos);
-  });
-};
+const router = express.Router();
+
+router.get("/todos", function(req, res) {
+  res.json(todos);
+});
+
+module.exports = router;
