@@ -1,21 +1,7 @@
 version: 2.1
-jobs:
-  build:
-    docker:
-      - image: circleci/node:10-browsers
-    steps:
-      - checkout
-      - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-      - run:
-          name: List all code files
-          command: |
-            ls -al
-            echo '-----This is surely my code----'
-      - run:
-          name: Running in a container with Node installed
-          command: |
-            node -v
+orbs:
+  heroku: circleci/heroku@1.0.0
+workflows:
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git
