@@ -4,5 +4,5 @@ orbs:
 workflows:
   heroku_deploy:
     jobs:
-       - herouku/deploy-via-git:
+       - heroku/deploy-via-git:
           context: ecs-deployment
