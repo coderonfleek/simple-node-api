@@ -1,6 +1,6 @@
-FROM node:current-slim
+FROM arm64v8/node:18.14-buster-slim
 
-RUN apt-get update -y && apt-get upgrade -y
+RUN apt-get update  && apt-get upgrade -y
 
 
 WORKDIR /SIMPLE-NODE-API
@@ -11,6 +11,8 @@ RUN npm install
 COPY ./routes.js routes.js 
 COPY ./server.js server.js
 COPY ./todos.js todos.js
+COPY ./cron.js cron.js
+
 
 EXPOSE 1337
 ENTRYPOINT [ "node", "server" ]
