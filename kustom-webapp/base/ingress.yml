@@ -3,23 +3,27 @@ kind: Ingress
 metadata:
   name: my-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
-  - host: teste.com
-    http:
-      paths:
-      - path: /prod
+  - paths:
+      - path: /prod/(.*)
         pathType: Prefix
         backend:
           service:
             name: app-service
             port:
               name: tester
-      - path: /dev
+      - path: /dev/(.*)
         pathType: Prefix
         backend:
           service:
             name: app-service
             port:
               name: tester
+resource.customizations: |
+    extensions/Ingress:
+        health.lua: |
+          hs = {}
+          hs.status = "Healthy"
+          return hs   

@@ -4,7 +4,7 @@ metadata:
   name: app-service
 spec:
   selector:
-    app: my-app
+    app: app-service
     container-name: tester
   ports:
     - protocol: TCP
