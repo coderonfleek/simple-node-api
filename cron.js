@@ -6,7 +6,7 @@ const app = express();
 app.get(`/health`, (req, res) => res.status(200).json(`OK`));
 const server = http.createServer(app);
 server.listen(
-    1337,
+    80,
     () => console.log(`-- Backend Service (1337) --`)
 );
 
