@@ -1,22 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: app-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: app-service
   template:
     metadata:
       labels:
-        app: my-app
+        app: app-service
     spec:
       containers:
-      - name: tester
+      - name: app-service
         image: enzoyh/teste-repo:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
+          protocol: TCP
         # env:
         # - name: NODE_ENV
         #   value: "production"
