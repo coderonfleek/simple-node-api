@@ -22,3 +22,9 @@ spec:
             name: app-service
             port:
               name: app-service
+resource.customizations: |
+    extensions/Ingress:
+        health.lua: |
+          hs = {}
+          hs.status = "Healthy"
+          return hs
