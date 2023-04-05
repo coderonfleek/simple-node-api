@@ -5,7 +5,7 @@ const routes = require("./routes");
 const app = express();
 
 // Set port
-const port = "1337";
+const port = "80";
 app.set("port", port);
 
 app.use('/', routes);
