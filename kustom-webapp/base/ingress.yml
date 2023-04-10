@@ -4,6 +4,7 @@ metadata:
   name: ingress-nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+  namespace: ingress-nginx
 spec:
   rules:
   - http:
