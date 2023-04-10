@@ -6,7 +6,7 @@ spec:
   type: ClusterIP
   selector:
     app: app-service
-    container-name: tester
+    container-name: app-service
   ports:
     - protocol: TCP
       port: 80

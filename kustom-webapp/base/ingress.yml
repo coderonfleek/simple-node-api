@@ -13,15 +13,15 @@ spec:
         backend:
           service:
             name: app-service
-            port:
-              name: app-service
+            port: 80
+              
       - path: /dev
         pathType: Prefix
         backend:
           service:
             name: app-service
-            port:
-              name: app-service
+            port: 80
+              
 resource.customizations: |
     extensions/Ingress:
         health.lua: |
