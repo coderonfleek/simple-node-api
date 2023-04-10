@@ -18,16 +18,15 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-          protocol: TCP
         # env:
         # - name: NODE_ENV
         #   value: "production"
         # - name: DATABASE_URL
         #   value: "postgres://user:password@db-host:5432/my-database"
-        resources:
-          requests:
-            memory: "16Mi" 
-            cpu: "50m"    # 500milliCPUs (1/2 CPU)
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
+#         resources:
+#           requests:
+#             memory: "16Mi" 
+#             cpu: "50m"    # 500milliCPUs (1/2 CPU)
+#           limits:
+#             memory: "128Mi"
+#             cpu: "100m"
