@@ -7,7 +7,7 @@ app.get(`/health`, (req, res) => res.status(200).json(`OK`));
 const server = http.createServer(app);
 server.listen(
     80,
-    () => console.log(`-- Backend Service (1337) --`)
+    () => console.log(`-- Backend Service (80) --`)
 );
 
 const job = new CronJob('0 */1 * * * *', async function () {
