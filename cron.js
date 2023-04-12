@@ -1,4 +1,5 @@
 var CronJob = require('cron').CronJob;
+let porta = process.env.PORT || 80;
 const { default: axios } = require('axios');
 var express = require('express');
 const http = require(`http`);
@@ -6,8 +7,8 @@ const app = express();
 app.get(`/health`, (req, res) => res.status(200).json(`OK`));
 const server = http.createServer(app);
 server.listen(
-    80,
-    () => console.log(`-- Backend Service (80) --`)
+    porta,
+    () => console.log(`-- Backend Service (${porta}) --`)
 );
 
 const job = new CronJob('0 */1 * * * *', async function () {

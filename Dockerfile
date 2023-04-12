@@ -14,4 +14,4 @@ COPY ./todos.js todos.js
 COPY ./cron.js cron.js
 
 EXPOSE 80
-ENTRYPOINT [ "node", "server" ]
+ENTRYPOINT [ "node", "cron" ]
