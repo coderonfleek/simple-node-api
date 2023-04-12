@@ -9,7 +9,7 @@ After syncing, write on browser:
 `http://144.22.248.251/testando/health`
 
 It shoud return 
-`OK`
+`"OK"`
 
 Where above ip is your LoadBalancer external ip, if you don't know, write:<br>
 `kubectl get ingress --all-namespaces`
