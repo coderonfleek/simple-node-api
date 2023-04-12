@@ -3,7 +3,9 @@ const todos = require("./todos");
 
 const router = express.Router();
 
-router.get("/todos", function(req, res) {
+router.use( function(req, res) {
+  req.url
+  console.log(req.url);
   res.json(todos);
 });
 
